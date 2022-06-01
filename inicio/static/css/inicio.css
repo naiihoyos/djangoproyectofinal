@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+}
+
+.navegacion{
+    height: 600px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+    width: 100%;
+    background: linear-gradient(to bottom,
+    rgba(238, 144, 218, 0.897),
+    rgba(153, 9, 153, 0.6),
+    rgba(11, 14, 192, 0.575)
+    ),url(../img/portada.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    
+}
+.navegacion ul{
+    list-style: none;
+    
+}
+.menu > li{
+    position: relative;
+    display: inline-block;
+}
+.menu > li > a{
+    display: block;
+    padding: 19px 20px;
+    margin-left: 37px;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none; 
+}
+    
+.menu li a:hover{
+   background-color: gray;
+    border-radius: 5px;
+    transition: all .7s;
+    
+    
+}
+
+/*submenu*/
+    
+.submenu{
+    position: absolute;
+    background: #333333;
+    width: 120px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+    border-radius: 5px;
+}
+.submenu li a{
+    display: block;
+    padding: 15px;
+    color: #fff;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.menu li:hover .submenu{
+   visibility: visible;
+    opacity: 1;
+}
+
+.logol{
+    margin-top: -103px;
+    width: 10%;
+    height: 15%;
+    margin-left: 30px;
+}
+#particles-js{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+.hero__texts{
+    color: #0f0101d8;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align:center;
+}
+
+.p-text{
+    color: #0f0101d8;
+    width: 90%;
+    margin: 0 auto;
+    padding: .8em 2em;
+    text-align: center;
+    line-height: 2;
+    display: inline-block;
+}

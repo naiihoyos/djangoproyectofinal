@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>VN-VariedadesNaii</title>
+    {% load static %}
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="{% static 'img/logo.jpg' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/inicio.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cards.css' %}">
+    <meta name="viewport" content="width=device-width, user-scalabe=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+    </head>
+    <body>
+  <header>
+              <nav class= "navegacion">
+                <form action=""  method="post" id="form">
+                  <div class="form">
+                  <h1>VARIEDADES NAII</h1></div></form> 
+                 <ul class= "menu">
+                     <li><a href="">inicio</a></li>
+                      <li><a href="login">Acceder</a></li>
+                     {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}">Cerrar Sesion</a></li>
+                        <li><a href="#">Usuario: {{ user.username }}</a></li>
+                      {% endif %}
+                  </ul>
+              </nav>
+            </header>
+        <img src="{% static 'img/logo.jpg' %}" class="logol">
+        <br>
+        <div class="hero__texts">
+          <p class="hero__paragraph">Un par de zapatos ofrece, mucho mas que solo caminar.!!      
+          </p>
+          <a href="#" class="cta"></a>
+      </div>
+
+        <div class="container">
+
+            {% for producto in productos %}
+           <div class="card">
+            <img src="{{producto.img.url}}">
+              <h4>{{producto.name}}</h4>
+              <h4>{{producto.description}}</h4>
+              <p>$&nbsp;{{producto.cost}}</p>
+              <a href="compra/{{producto.id}}">Comprar Ahora!!</a>
+            </div>
+            {% endfor %}
+            <div class="p-text" >
+              <p class="before">Siente el amor en cada paso.!!</p>
+              <p class="before">Desarrrollado por Soluciones NHZ.</p>
+          </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,149 @@
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width initial-scale=1.0">
+<meta name="viewport" content="width=device-width, user-scalabe=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+<title>Datos de entrega</title>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'css/domicilio.css' %}">
+<link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
+</head>
+    
+
+<body>
+ <header>
+              <nav class= "navegacion">
+                 <ul class= "menu">
+                     <li><a href="{% url 'home' %}">inicio</a></li>
+                  </ul> 
+              </nav>
+            </header>
+        <img src="{% static 'img/logo.jpg' %}" class="logol">
+		
+        <!-- Link hacia el archivo de estilos css -->
+        
+        <style type="text/css">
+            
+        </style>
+
+ </body>
+    
+    <body>
+        
+        <div id="contenedor">
+            <div id="central">
+                <div id="login">
+                    <div class="titulo">
+                        DATOS DE ENTREGA
+                    </div>
+                    <form id="loginform" method="post" action="/venta/"> {% csrf_token %}
+                        <input type="text" name="nombre" placeholder="Nombre y apellidos completos" required>
+                        <br>
+                        <input  list="documento" name="documento" placeholder="Tipo de Documento" required>
+                        <datalist id="documento">
+                          <option>	CC.	CEDULA DE CIUDADANIA</option>
+                          <option>	NIT.	NUMERO DE IDENTIFICACION TRIBUTARIA</option>
+                          <option>TI.	TARJETA DE IDENTIDAD</option>
+                          <option>PAP.	PASAPORTE</option>
+                        </datalist>
+                        <br>
+                        <input type="text" name="cedula" placeholder="Numero de documento" required>
+                        <br>
+                        <input type="email" name="correo" placeholder="Correo electronico" required>
+                        <br>
+                        <input type="adress" name="direccion" placeholder="direccion" required>
+                        <br>
+                        <input list="Departamentos" name="departamento" placeholder="Departamento" required>
+                        <datalist id="Departamentos">
+                         <option>Amazonas</option>
+                         <option>Antioquia</option>
+                         <option>Arauca</option>
+                         <option> Atlántico</option>
+                         <option> Bogotá</option>
+                         <option>Bolívar</option>
+                         <option>Boyacá</option>
+                         <option>Caldas</option>
+                         <option>Caquetá</option>
+                         <option>Casanare</option>
+                         <option>Cauca</option>
+                         <option>Cesar</option>
+                         <option>Chocó</option>
+                         <option>Córdoba</option>
+                         <option>Cundinamarca</option>
+                         <option>Guainía</option>
+                         <option>Guaviare</option>
+                         <option>Huila</option>
+                         <option>La Guajira</option>
+                         <option>Magdalena</option>
+                         <option>Meta</option>
+                         <option>Nariño</option>
+                         <option>Norte de Santander</option>
+                         <option>Putumayo</option>
+                         <option>Quindío</option>
+                         <option>Risaralda</option>
+                         <option>San Andrés y Providencia</option>
+                         <option>Santander</option>
+                         <option>Sucre</option>
+                         <option>Tolima</option>
+                         <option>Valle del Cauca</option>
+                         <option>Vaupés</option><option>Vichada</option>
+                            
+                            
+                        </datalist>
+                        <br>
+                        <input list="ciudad" name="ciudad" placeholder="ciudad" required>
+                        <datalist id="ciudad">
+                            <option>Leticia</option>
+                            <option>Medellín</option>
+                            <option>Arauca</option>
+                            <option>Barranquilla</option>
+                            <option>Bogotá</option>
+                            <option>Cartagena	</option>
+                            <option>Tunja</option>
+                            <option>Manizales</option>
+                            <option>Florencia</option>
+                            <option>Yopal</option>
+                            <option>Popayán</option>
+                            <option>Valledupar</option>
+                            <option>Quibdó</option>
+                            <option>Montería</option>
+                            <option>Bogotá</option>
+                            <option>Inírida</option>
+                            <option>San José del Guaviare</option>
+                            <option>Neiva</option>
+                            <option>Riohacha</option>
+                            <option>Santa Marta</option>
+                            <option>Villavicencio</option>
+                            <option>Pasto	</option>
+                            <option>Cúcuta</option>
+                            <option>Mocoa</option>
+                            <option>Armenia</option>
+                            <option>Pereira</option>
+                            <option>San Andrés</option>
+                            <option>Bucaramanga</option>
+                            <option>Sincelejo</option>
+                            <option>Ibagué</option>
+                            <option>Cali</option>
+                            <option>Mitú</option>
+                            <option>Puerto Carreño</option>
+                        </datalist>
+                        <br>
+                        <input type="text" name="tel" placeholder="telefono">
+                        <br>
+                        <br>
+                        <div class="pie">
+                            <font color="white">Detalles:</font>
+                        </div>
+                        <input type="text" name="producto" value="{{producto.name}}  {{producto.description}} " readonly>
+                        <font color="white">Total $ COP: </font>
+                        <input type="text" name="precio" value="{{producto.cost}}" readonly>
+                        <button type="submit" onclick="alert ('El Pedido fue exitoso!!')" title="compra" name="compra">COMPRAR!!</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+</body>
+</html>
